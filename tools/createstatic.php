@@ -95,13 +95,12 @@ class page{
             <div id="header">
                 <div class="content">
                     <div id="full" class="clearfix">
-                        <div class="left">Mayhew Tech</div>
+                        <div class="left"></div>
                         <div class="right"></div>
                     </div>
                     <div id="horizontalNav">
                         <div class="container">
                             <ul id="menu">
-                                <li><a href="/">Home</a></li>
                             </ul>
                         </div>
                         <div class="clearfloat"></div>
