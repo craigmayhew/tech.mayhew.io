@@ -259,6 +259,20 @@ p {
     text-decoration: underline
 }
 
+#page #full .content .boxy {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: solid #000 1px;
+    float: left;
+    height: 300px;
+    margin-right: 10px;
+    padding: 20px;
+    width: 255px;
+}
+#page #full .content .boxy:last-of-type{
+    margin: 0;
+}
+
 #page
 #left {
     width: 580px;
