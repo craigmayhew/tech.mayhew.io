@@ -7,7 +7,7 @@ class builder{
   private $dirPages  = '../pages/';
   private $cssPath   = '../c.css';
   private $css       = '';
-  private $justCopy  = array('c.css','imgs','j.js','robots.txt');
+  private $justCopy  = array('c.css','j.js','robots.txt');
   /*CONFIG END*/
 
   private function recurse_copy($src,$dst) {
