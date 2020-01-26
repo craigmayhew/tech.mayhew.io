@@ -1,3 +1,33 @@
+## AWS IAM permissions in use for CI
+#
+#{
+#    "Version": "2012-10-17",
+#    "Statement": [
+#        {
+#            "Effect": "Allow",
+#            "Action": "s3:*",
+#            "Resource": [
+#                "arn:aws:s3:::tech.mayhew.io/*",
+#                "arn:aws:s3:::tech.mayhew.io"
+#            ]
+#        },
+#        {
+#            "Effect": "Allow",
+#            "Action": [
+#                "cloudfront:CreateInvalidation"
+#            ],
+#            "Resource": "arn:aws:cloudfront::ACCOUNTID:distribution/DISTRIBUTIONID"
+#        },
+#        {
+#            "Effect": "Allow",
+#            "Action": [
+#                "cloudfront:ListDistributions"
+#            ],
+#            "Resource": "*"
+#        }
+#    ]
+#}
+
 language: php
 
 php:
