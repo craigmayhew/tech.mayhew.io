@@ -3,7 +3,7 @@
 require '../vendor/autoload.php';
 use Aws\Common\Aws;
 
-$dir = '/mnt/c/Users/day2day/Documents/GitHub/tech.mayhew.io/htdocs';
+$dir = getenv('TRAVIS_BUILD_DIR').'/htdocs';
 $bucket = 'tech.mayhew.io';
 $keyPrefix = '';
 
