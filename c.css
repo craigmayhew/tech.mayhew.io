@@ -262,11 +262,12 @@ p {
 #page #full .content .boxy {
     border-collapse: separate;
     border-spacing: 0;
-    border: solid #000 1px;
+    border: solid #000 0px;
     float: left;
     height: 300px;
     margin-right: 10px;
     padding: 20px;
+    text-align: center;
     width: 255px;
 }
 #page #full .content .boxy:last-of-type{
