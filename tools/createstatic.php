@@ -122,15 +122,20 @@ class page{
                 <div class="content clearfix">
 
                 <div class="left">
-                    
+                        <ul>
+                            <li><h6>Company</h6></li>
+                            <li><a href="/policies-terms/">Policies, Terms &amp; Conditions</a></li>
+                        </ul>
+                        <ul>
+                            <li>&nbsp;</li>
+                        </ul>
                 </div>
                 <div class="right">
                         <ul>
                             <li>&nbsp;</li>
                         </ul>
                         <ul>
-                            <li><h6>Company</h6></li>
-                            <li><a href="/policies-terms/">Policies, Terms &amp; Conditions</a></li>
+                            <li>&nbsp;</li>
                         </ul>
                 </div>
                 <div class="clearfloat"></div>
