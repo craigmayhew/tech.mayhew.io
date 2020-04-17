@@ -98,23 +98,7 @@ class page{
 <body>
 <div id="outer">
     <div id="inner">
-        <div id="container">    
-            <div id="header">
-                <div class="content">
-                    <div id="full" class="clearfix">
-                        <div class="left"></div>
-                        <div class="right"></div>
-                    </div>
-                    <div id="horizontalNav">
-                        <div class="container">
-                            <ul id="menu">
-                            </ul>
-                        </div>
-                        <div class="clearfloat"></div>
-                    </div>
-                </div>
-                <div class="clearfloat"></div>
-              </div>';
+        <div id="container">';
   }
   private function buildFooter(){
     $this->footer =
