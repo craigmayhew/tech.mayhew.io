@@ -28,6 +28,8 @@
 #    ]
 #}
 
+dist: bionic
+
 language: php
 
 php:
