@@ -4,7 +4,7 @@ require '../vendor/autoload.php';
 use Aws\Common\Aws;
 
 $dir = getenv('TRAVIS_BUILD_DIR').'/htdocs';
-$bucket = 'tech.mayhew.io';
+$bucket = 'mayhewtech.com';
 $keyPrefix = '';
 
 $options = array(
@@ -15,7 +15,7 @@ $options = array(
 
 $config = [
     'profile' => 'default',
-    'region' => 'eu-west-2',
+    'region' => 'us-east-1',
     'signature' => 'v4'
 ];
 
@@ -34,7 +34,7 @@ $distributionId = false;
 foreach($distributionList['Items'] as $d) {
     if (isset($d['Aliases']['Items'])) {
         foreach ($d['Aliases']['Items'] as $aliases) {
-            if ($aliases === 'tech.mayhew.io') {
+            if ($aliases === 'mayhewtech.com') {
                 $distributionId = $d['Id'];
                 break 2;
             }

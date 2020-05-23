@@ -1,2 +1,2 @@
-# tech.mayhew.io
-Public website tech.mayhew.io
+# mayhewtech.com
+Public website mayhewtech.com

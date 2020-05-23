@@ -7,8 +7,8 @@
 #            "Effect": "Allow",
 #            "Action": "s3:*",
 #            "Resource": [
-#                "arn:aws:s3:::tech.mayhew.io/*",
-#                "arn:aws:s3:::tech.mayhew.io"
+#                "arn:aws:s3:::mayhewtech.com/*",
+#                "arn:aws:s3:::mayhewtech.com"
 #            ]
 #        },
 #        {
