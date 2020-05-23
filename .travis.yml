@@ -31,7 +31,7 @@
 language: php
 
 php:
-  - 7.3
+  - 7.4
   - nightly
 
 install:
@@ -41,7 +41,7 @@ script:
   - |
     cd $TRAVIS_BUILD_DIR/tools && php createstatic.php
     
-    if([ $TRAVIS_PHP_VERSION == "7.3" ] && [ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == "false" ])
+    if([ $TRAVIS_PHP_VERSION == "7.4" ] && [ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == "false" ])
     then
       cd $TRAVIS_BUILD_DIR/tools && php uploadToS3.php
       echo "Deployed"
