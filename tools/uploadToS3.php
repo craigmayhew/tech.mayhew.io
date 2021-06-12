@@ -2,6 +2,36 @@
 
 require '../vendor/autoload.php';
 use Aws\Common\Aws;
+## AWS IAM permissions in use for CI
+#
+#{
+#    "Version": "2012-10-17",
+#    "Statement": [
+#        {
+#            "Effect": "Allow",
+#            "Action": "s3:*",
+#            "Resource": [
+#                "arn:aws:s3:::mayhewtech.com/*",
+#                "arn:aws:s3:::mayhewtech.com"
+#            ]
+#        },
+#        {
+#            "Effect": "Allow",
+#            "Action": [
+#                "cloudfront:CreateInvalidation"
+#            ],
+#            "Resource": "arn:aws:cloudfront::ACCOUNTID:distribution/DISTRIBUTIONID"
+#        },
+#        {
+#            "Effect": "Allow",
+#            "Action": [
+#                "cloudfront:ListDistributions"
+#            ],
+#            "Resource": "*"
+#        }
+#    ]
+#}
+
 
 $dir = getenv('TRAVIS_BUILD_DIR').'/htdocs';
 $bucket = 'mayhewtech.com';
