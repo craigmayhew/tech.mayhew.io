@@ -1,6 +1,5 @@
 <?php
 
-require '../vendor/autoload.php';
 use Aws\Common\Aws;
 ## AWS IAM permissions in use for CI
 #
@@ -32,8 +31,16 @@ use Aws\Common\Aws;
 #    ]
 #}
 
+// work out if we are in the tool directory or the root of the repo
+if (file_exists(getcwd().'/vendor/autoload.php')){
+    require 'vendor/autoload.php';
+    $dir = 'htdocs';
+} else {
+    require '../vendor/autoload.php';
+    $dir = '../htdocs';
+}
 
-$dir = getenv('TRAVIS_BUILD_DIR').'/htdocs';
+
 $bucket = 'mayhewtech.com';
 $keyPrefix = '';
 
