@@ -41,16 +41,8 @@ if (file_exists(getcwd().'/vendor/autoload.php')){
 
 use Aws\CloudFront\CloudFrontClient; 
 use Aws\S3\S3Client;  
+use Aws\S3\Transfer;  
 use Aws\Exception\AwsException;
-
-$bucket = 'mayhewtech.com';
-$keyPrefix = '';
-
-$options = array(
-    'params'      => array('ACL' => 'public-read'),
-    'concurrency' => 20,
-    'debug'       => true
-);
 
 $config = [
     'profile' => 'default',
@@ -60,7 +52,22 @@ $config = [
 ];
 
 $s3 = new S3Client($config);
-$s3->uploadDirectory($dir, $bucket, $keyPrefix, $options);
+
+$bucket = 's3://mayhewtech.com';
+
+$uploader = new Transfer($s3, $dir, $bucket, [
+    'before' => function (\Aws\Command $command) {
+        // Commands can vary for multipart uploads, so check which command
+        // is being processed
+        if (in_array($command->getName(), ['PutObject', 'CreateMultipartUpload'])) {
+            // Apply an ACL
+            $command['ACL'] = 'public-read';
+        }
+    },
+    'concurrency' => 20,
+]);
+$uploader->transfer();
+
 echo 'Site uploaded to S3'."\n";
 
 $cf = new Aws\CloudFront\CloudFrontClient([
