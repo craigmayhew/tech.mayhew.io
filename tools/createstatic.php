@@ -97,45 +97,38 @@ class page{
     '<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mayhew Tech</title>
 <link rel="stylesheet" href="/c.css" media="screen" type="text/css" />
 <script src="/j.js" type="text/javascript"></script>
 </head>
-<body>
-<div id="outer">
-    <div id="inner">
-        <div id="container">';
+<body>';
   }
   private function buildFooter(){
     $this->footer =
-                '<div id="footer">
-                <div class="content clearfix">
+    '<div id="footer">
+    <div class="content clearfix">
 
-                <div class="left">
-                        <ul>
-                            <li><h6>Company</h6></li>
-                            <li><a href="/policies-terms/">Policies, Terms &amp; Conditions</a></li>
-                        </ul>
-                        <ul>
-                            <li>&nbsp;</li>
-                        </ul>
-                </div>
-                <div class="right">
-                        <ul>
-                            <li>&nbsp;</li>
-                        </ul>
-                        <ul>
-                            <li>&nbsp;</li>
-                        </ul>
-                </div>
-                <div class="clearfloat"></div>
-                <div id="companyaddress">Registered Address: St Dunstans House, 15-17 South Street, Worthing, West Sussex, BN14 7LG, England, Company No. 05073043</div>
-                </div>
-            </div>
-        </div>
+    <div class="left">
+            <ul>
+                <li><a href="/policies-terms/">Terms &amp; Conditions</a></li>
+                <li><a href="/policies-terms/cookies/">Cookie policy</a></li>
+            </ul>
+            <ul>
+                <li>&nbsp;</li>
+            </ul>
+    </div>
+    <div class="right">
+            <ul>
+                <li>&nbsp;</li>
+            </ul>
+            <ul>
+                <li>&nbsp;</li>
+            </ul>
     </div>
     <div class="clearfloat"></div>
-</div>
+    <div id="companyaddress">Registered Address: St Dunstans House, 15-17 South Street, Worthing, West Sussex, BN14 7LG, England, Company No. 05073043</div>
+    </div>
 <script type="text/javascript">
 window.onerror = function(msg, url, linenumber){
     errorHandler.call(msg, url, linenumber);
