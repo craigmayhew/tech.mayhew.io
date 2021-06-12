@@ -3,12 +3,18 @@ date_default_timezone_set("Europe/London");
 
 class builder{
   /*CONFIG START*/
-  private $destinationFolder = '../htdocs/';
-  private $dirPages  = '../pages/';
-  private $cssPath   = '../c.css';
+  private $destinationFolder = 'htdocs/';
+  private $dir       = '';
+  private $dirPages  = 'pages/';
+  private $cssPath   = 'c.css';
   private $css       = '';
   private $justCopy  = array('c.css','j.js','robots.txt');
   /*CONFIG END*/
+
+  function __construct($dir=''){
+    $this->dir = $dir;
+    $this->destinationFolder = $this->dir.$this->destinationFolder;
+  }
 
   private function recurse_copy($src,$dst) {
     $dir = opendir($src);
@@ -28,28 +34,28 @@ class builder{
   }
 
   public function build(){
-    $this->css = file_get_contents($this->cssPath);
+    $this->css = file_get_contents($this->dir.$this->cssPath);
     echo "Copying Static Files\n";
     $this->copyStaticFiles();
     echo "Building Pages\n";
-    $this->buildPages($this->dirPages);
+    $this->buildPages($this->dir.$this->dirPages);
   }
 
   private function copyStaticFiles(){
-    mkdir($this->destinationFolder);
+    @mkdir($this->destinationFolder);
     //copy static files
     foreach($this->justCopy as $fileOrFolder){
       //if we are copying a file
-      if(is_file('../'.$fileOrFolder)){
+      if(is_file($this->dir.$fileOrFolder)){
         echo 'copied '.$this->destinationFolder.$fileOrFolder."\n";
-        copy('../'.$fileOrFolder,$this->destinationFolder.$fileOrFolder);
+        copy($this->dir.$fileOrFolder,$this->destinationFolder.$fileOrFolder);
       }else{ //else we are copying a folder
         //check if the folder needs creating in the destination
         if(!is_dir($this->destinationFolder.$fileOrFolder)){
           mkdir($this->destinationFolder.$fileOrFolder);
         }
         //copy the contents over
-        $this->recurse_copy('../'.$fileOrFolder,$this->destinationFolder.$fileOrFolder);
+        $this->recurse_copy($this->dir.$fileOrFolder,$this->destinationFolder.$fileOrFolder);
       }
     }
   }
@@ -148,6 +154,13 @@ window.onerror = function(msg, url, linenumber){
   }
 }
 
+// work out if we are in the tool directory or the root of the repo
+if (file_exists(getcwd().'/vendor/autoload.php')){
+  $dir = '';
+} else {
+  $dir = '../';
+}
+
 //go build stuff!
-$builder = new builder();
+$builder = new builder($dir);
 $builder->build();
