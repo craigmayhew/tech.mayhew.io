@@ -1,6 +1,11 @@
 # mayhewtech.com
 Public website mayhewtech.com
 
+# local ubuntu dev environment
+```php
+sudo apt install php7.4-cli php7.4-curl php7.4-zip php-xml
+```
+
 ## builds and deploys
 
 Build & deployment should be done via local environment.
